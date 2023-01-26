@@ -6,7 +6,7 @@
 Instructions of use:
 
 Please download the code and open it with a supported code editor (eg. Visual Studio Code).
-Open the file index.html with Live Server.
+Open the file 'index.html' with Live Server.
 Enter the deposit, staking percentage and  click the "Download CSV" button .
 
 
