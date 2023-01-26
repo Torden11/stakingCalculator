@@ -10,13 +10,13 @@ const generateCSV = document.querySelector(".form__btn--close");
 
 generateCSV.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("hi");
+  
 
   const initialInvestmentAmount = Number(LabelInitialInvestmentAmount.value);
   const stakingPercentage = Number(LabelStakingPercentage.value) / 100;
 
-  const startDate = new Date("2020-11-10");
-  const endDate = new Date("2022-11-10");
+  const startDate = new Date("2019-04-15");
+  const endDate = new Date("2021-04-15");
 
   // let startDate;
 
@@ -26,7 +26,7 @@ generateCSV.addEventListener("click", function (e) {
   //   console.log(startDate);
   // });
 
-  const paymentDay = 15;
+  const paymentDay = 23;
 
   let totalStakingAmount = initialInvestmentAmount;
   let csvArray = [];
@@ -52,7 +52,7 @@ generateCSV.addEventListener("click", function (e) {
     let periodReward =
       totalStakingAmount *
       (Math.pow(1 + stakingPercentage, 1 / 365) - 1) *
-      daysDifference; // formula is taken from https://support.blockchain.com/hc/en-us/articles/5969248325276-How-are-Staking-Rewards-calculated-
+      daysDifference; 
     totalReward += periodReward;
     csvArray.push(
       new Array(
@@ -61,7 +61,7 @@ generateCSV.addEventListener("click", function (e) {
         totalStakingAmount.toFixed(6),
         periodReward.toFixed(6),
         totalReward.toFixed(6),
-        "7.00%\n"
+        `${(stakingPercentage * 100).toFixed(2)}%\n`
       )
     );
 
@@ -103,7 +103,6 @@ generateCSV.addEventListener("click", function (e) {
       inputDate.getMonth(),
       paymentDay
     );
-    console.log(inputDate);
     if (inputDate >= targetRewardDate) {
       targetRewardDate = new Date(
         inputDate.getFullYear(),
@@ -117,7 +116,7 @@ generateCSV.addEventListener("click", function (e) {
     return targetRewardDate;
   }
 
-  //Generate CSV file and download it to local computer https://www.tutorialspoint.com/how-to-create-and-save-text-file-in-javascript
+
 
   function downloadFile(csvDataArray) {
     const link = document.createElement("a");
