@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Staking Calculator</title>
+</head>
+<body>
+   <main class="app">
+      <!-- Deposit -->
+      <div class="operation operation--transfer">
+        <h2>Deposit amount</h2>
+        <form class="form form--transfer">
+          <input type="number" class="form__input form__input--amount" />
+
+          <label class="form__label">Insert the amount</label>
+        </form>
+      </div>
+
+      <!-- Percentage -->
+      <div class="operation operation--percentage">
+        <h2>Staking reward (%)</h2>
+        <form class="form form--percentage">
+          <input
+            type="number"
+            class="form__input form__input--percentage-amount"
+          />
+
+          <label class="form__label form__label--percentage"
+            >Insert the percentage</label
+          >
+        </form>
+      </div>
+
+      <!-- Staking period -->
+      <div class="operation operation--period">
+        <h2>Staking period</h2>
+        <form class="form form--period">
+          <label for="start">Start date:</label>
+          <input type="date" id="start" name="start" class="deposit-start" />
+          <label for="start">End date:</label>
+          <input type="date" id="end" name="end" class="deposit-end" />
+          <button class="form__btn form__btn--close">Sumbit</button>
+        </form>
+      </div>
+
+      <div class="operation operation--csv">
+        <h2>Click the button to download the CSV file</h2>
+
+        <form class="form form--close">
+          <button
+            class="form__btn form__btn--close"
+            onclick="download_csv_file()"
+          >
+            &rarr;
+          </button>
+          <label class="form__label">Download CSV</label>
+        </form>
+      </div>
+    </main>
+
+    <script src="calcJS.js"></script>
+</body>
+</html>
