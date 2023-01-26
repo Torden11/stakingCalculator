@@ -2,8 +2,11 @@
 
 # Crypto Currency Staking Calculator
 
+## Github link: 
+https://github.com/Torden11/stakingCalculator
 
-Instructions of use:
+
+## Instructions of Use
 
 Please download the code and open it with a supported code editor (eg. Visual Studio Code).
 Open the file 'index.html' with Live Server.
